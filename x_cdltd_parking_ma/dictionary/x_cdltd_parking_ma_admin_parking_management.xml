@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Admin Parking Management" max_length="40" name="x_cdltd_parking_ma_admin_parking_management" sizeclass="3" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Address" max_length="40" name="address" type="string"/>
+        <element label="Capacity" mandatory="true" max_length="40" name="capacity" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Country" max_length="40" name="country" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Garage" mandatory="true" max_length="40" name="garage" type="string"/>
+    </element>
+</database>

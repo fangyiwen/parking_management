@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="spot_number" label="Spot number" language="en" table="x_cdltd_parking_ma_processed_parking_management">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>spot_number</element>
+            <help/>
+            <hint/>
+            <label>Spot number</label>
+            <language>en</language>
+            <name>x_cdltd_parking_ma_processed_parking_management</name>
+            <plural>Spot numbers</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-22 07:37:25</sys_created_on>
+            <sys_id>5d4c547fed7c10107f4436720f991a83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Spot number</sys_name>
+            <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+            <sys_update_name>sys_documentation_x_cdltd_parking_ma_processed_parking_management_spot_number_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-22 07:37:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Process_Request_Batch</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 00:00:20</run_period>
+        <run_start>2020-05-22 04:59:19</run_start>
+        <run_time>1970-01-01 00:00:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var request = new GlideRecord('x_cdltd_parking_ma_parking_management');
+request.addQuery('spot_number',-1);
+request.query();
+
+while(request.next()){
+	var flags=[];
+	for(i=0;i<3;i++){
+		flags.push(0);
+	}
+	var processed = new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+	processed.query();
+	
+	while(processed.next()){
+		var processed_start_time=new Date(processed.start_time.toString());
+		var request_start_time=new Date(request.start_time.toString());
+		var processed_end_time=new Date(processed.end_time.toString());
+		var request_end_time=new Date(request.end_time.toString());
+		
+		/*if(processed_start_time.getDate()!==request_start_time.getDate()){
+			continue;
+		}*/
+		var date1=processed.start_time.toString().substring(8,10);
+		var date2=request.start_time.toString().substring(8,10);
+		if(date1!==date2){
+			continue;
+		}
+		
+		var processed_start_hour=parseInt(processed.start_time.toString().substring(11,13));
+		var processed_end_hour=parseInt(processed.end_time.toString().substring(11,13));
+		var request_start_hour=parseInt(request.start_time.toString().substring(11,13));
+		var request_end_hour=parseInt(request.end_time.toString().substring(11,13));
+		
+		var index=processed.spot_number-1;
+		//if(processed_start_time.getHours()>request_end_time.getHours()||
+		//				processed_end_time.getHours()<request_start_time.getHours()){
+		if(processed_start_hour>request_end_hour||
+			processed_end_hour<request_start_hour){
+			if(flags[index]!=-1)
+				flags[index]=1;
+		}else{
+			flags[index]=-1;
+		}
+	}
+	
+	var first_one_index = flags.indexOf(1);
+	var first_zero_index = flags.indexOf(0);
+	
+	
+	if(first_one_index==-1){
+		request.spot_number=first_zero_index+1;
+	}else{
+		request.spot_number=first_one_index+1;
+	}
+	
+	if(request.spot_number>0){
+		var newRecord=new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+		newRecord.initialize();
+		newRecord.number=request.number;
+		newRecord.plate_number=request.plate_number;
+		newRecord.requested_for=request.requested_for;
+		newRecord.spot_number=request.spot_number;
+		newRecord.start_time=request.start_time;
+		newRecord.end_time=request.end_time;
+		if(newRecord.insert()){
+			request.deleteRecord();
+		}
+	}else{
+		request.spot_number=-100;
+		request.update();
+	}
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 05:01:51</sys_created_on>
+        <sys_id>5518f72bed3c10107f4436720f991a8a</sys_id>
+        <sys_mod_count>86</sys_mod_count>
+        <sys_name>Process_Request_Batch</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_update_name>sysauto_script_5518f72bed3c10107f4436720f991a8a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 19:00:12</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

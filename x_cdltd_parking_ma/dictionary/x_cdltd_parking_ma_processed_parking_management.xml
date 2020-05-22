@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Processed Parking Management" max_length="40" name="x_cdltd_parking_ma_processed_parking_management" sizeclass="9" type="collection">
+        <element label="End Time" max_length="40" name="end_time" type="glide_date_time"/>
+        <element label="Number" max_length="40" name="number" type="string"/>
+        <element label="Plate number" max_length="40" name="plate_number" type="string"/>
+        <element label="Requested for" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element display="true" label="Spot number" max_length="40" name="spot_number" type="integer"/>
+        <element label="Start Time" max_length="40" name="start_time" type="glide_date_time"/>
+        <index name="index">
+            <element name="requested_for"/>
+        </index>
+    </element>
+</database>

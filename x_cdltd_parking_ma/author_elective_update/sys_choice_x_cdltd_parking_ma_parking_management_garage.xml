@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="garage" table="x_cdltd_parking_ma_parking_management" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>garage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Garage 1</label>
+            <language>en</language>
+            <name>x_cdltd_parking_ma_parking_management</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-21 21:18:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a7ae8a63ed7810107f4436720f991a01</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-21 21:18:49</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>garage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Garage 2</label>
+            <language>en</language>
+            <name>x_cdltd_parking_ma_parking_management</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-21 21:18:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e7ae8a63ed7810107f4436720f991a03</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-21 21:18:49</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>garage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Garage 3</label>
+            <language>en</language>
+            <name>x_cdltd_parking_ma_parking_management</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-21 21:18:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a3ae8a63ed7810107f4436720f991a05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-21 21:18:49</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>garage</element>
+            <name>x_cdltd_parking_ma_parking_management</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-21 21:18:49</sys_created_on>
+            <sys_id>efae8a63ed7810107f4436720f991a01</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>garage</sys_name>
+            <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+            <sys_update_name>sys_choice_x_cdltd_parking_ma_parking_management_garage</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-21 21:18:49</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application/>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Open - Unassigned (Successful)</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_cdltd_parking_ma_processed_parking_management</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query>active=true^assigned_toISEMPTY^EQ</query>
+        <report/>
+        <roles>x_cdltd_parking_ma.admin</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 17:21:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8ec1aef7edb050107f4436720f991a7c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open - Unassigned (Successful)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_update_name>sys_app_module_8ec1aef7edb050107f4436720f991a7c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 17:21:23</sys_updated_on>
+        <timeline_page/>
+        <title>Open - Unassigned (Successful)</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</application>
+        <file_path/>
+        <instance_id>854d1557dbf89c5480d9a18c139619fe</instance_id>
+        <instance_name>ne-hackathon-dev-005</instance_name>
+        <name>sys_app_module_8ec1aef7edb050107f4436720f991a7c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application/><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Open - Unassigned (Successful)</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_cdltd_parking_ma_processed_parking_management</name><order/><override_menu_roles>false</override_menu_roles><query>active=true^assigned_toISEMPTY^EQ</query><report/><roles>x_cdltd_parking_ma.admin</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-05-22 17:21:23</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>8ec1aef7edb050107f4436720f991a7c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Open - Unassigned (Successful)</sys_name><sys_overrides/><sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package><sys_policy/><sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope><sys_update_name>sys_app_module_8ec1aef7edb050107f4436720f991a7c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-05-22 17:21:23</sys_updated_on><timeline_page/><title>Open - Unassigned (Successful)</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1647163696</payload_hash>
+        <record_name>Open - Unassigned (Successful)</record_name>
+        <reverted_from/>
+        <source>22288e6fed3810107f4436720f991a8f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 17:21:23</sys_created_on>
+        <sys_id>97e1623bedb050107f4436720f991a62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1723d675b720000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 17:21:23</sys_updated_on>
+        <type>Module</type>
+        <update_guid>dfe1623b5bb05010ca89c465de933261</update_guid>
+        <update_guid_history>dfe1623b5bb05010ca89c465de933261:-1647163696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Open - Unassigned (Successful)">aa82e63bedb050107f4436720f991ab2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 17:24:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>117c1b6868ed4c6bb3f7ab483cb3ab91</sys_id>
+        <sys_metadata>8ec1aef7edb050107f4436720f991a7c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open - Unassigned (Successful)</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_scope_delete display_value="">5398b008da444608a3f25d25501ac9c4</sys_scope_delete>
+        <sys_update_name>sys_app_module_8ec1aef7edb050107f4436720f991a7c</sys_update_name>
+        <sys_update_version display_value="sys_app_module_8ec1aef7edb050107f4436720f991a7c">97e1623bedb050107f4436720f991a62</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 17:24:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

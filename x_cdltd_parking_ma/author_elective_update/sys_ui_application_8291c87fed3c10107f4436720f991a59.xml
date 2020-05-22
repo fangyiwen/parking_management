@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="DELETE">
+        <active>true</active>
+        <hint/>
+        <name>Admin Parking Management</name>
+        <order/>
+        <roles>x_cdltd_parking_ma.admin</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 05:40:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8291c87fed3c10107f4436720f991a59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Admin Parking Management</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_update_name>sys_ui_application_8291c87fed3c10107f4436720f991a59</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 05:40:52</sys_updated_on>
+    </sys_ui_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</application>
+        <file_path/>
+        <instance_id>854d1557dbf89c5480d9a18c139619fe</instance_id>
+        <instance_name>ne-hackathon-dev-005</instance_name>
+        <name>sys_ui_application_8291c87fed3c10107f4436720f991a59</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application"><sys_ui_application action="INSERT_OR_UPDATE"><active>true</active><hint/><name>Admin Parking Management</name><order/><roles>x_cdltd_parking_ma.admin</roles><sys_class_name>sys_ui_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-05-22 05:40:52</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>8291c87fed3c10107f4436720f991a59</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Admin Parking Management</sys_name><sys_overrides/><sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package><sys_policy/><sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope><sys_update_name>sys_ui_application_8291c87fed3c10107f4436720f991a59</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-05-22 05:40:52</sys_updated_on></sys_ui_application></record_update>]]></payload>
+        <payload_hash>188836387</payload_hash>
+        <record_name>Admin Parking Management</record_name>
+        <reverted_from/>
+        <source>22288e6fed3810107f4436720f991a8f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 05:40:52</sys_created_on>
+        <sys_id>4a91c87fed3c10107f4436720f991a5b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1723ae606150000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 05:40:52</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>8291c87f8a3c1010cbf3a5b9fa95785b</update_guid>
+        <update_guid_history>8291c87f8a3c1010cbf3a5b9fa95785b:188836387</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 05:42:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_application">sys_ui_application</sys_db_object>
+        <sys_id>60c8440a739f4d6497aa0156182c2881</sys_id>
+        <sys_metadata>8291c87fed3c10107f4436720f991a59</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Admin Parking Management</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_scope_delete display_value="">5398b008da444608a3f25d25501ac9c4</sys_scope_delete>
+        <sys_update_name>sys_ui_application_8291c87fed3c10107f4436720f991a59</sys_update_name>
+        <sys_update_version display_value="sys_ui_application_8291c87fed3c10107f4436720f991a59">4a91c87fed3c10107f4436720f991a5b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 05:42:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

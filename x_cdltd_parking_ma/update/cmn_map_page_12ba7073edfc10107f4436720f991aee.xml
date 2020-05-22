@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmn_map_page">
+    <cmn_map_page action="INSERT_OR_UPDATE">
+        <center_address>Yogododji, Africa</center_address>
+        <center_latitude/>
+        <center_longitude/>
+        <controls_size>large</controls_size>
+        <filter/>
+        <initial_zoom>2</initial_zoom>
+        <name>x_cdltd_parking_ma_ShowLocations</name>
+        <overview>false</overview>
+        <refresh_on_zoom>false</refresh_on_zoom>
+        <script><![CDATA[var gr = new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+// gr.addEncodedQuery("requested_for.cityISNOTEMPTY");
+gr.addEncodedQuery("active=true^requested_for.cityISNOTEMPTY");
+gr.query();
+
+while (gr.next()) {
+
+    //  Add copied  REST Message Script BELOW this line
+
+    try {
+        var r = new sn_ws.RESTMessageV2('x_cdltd_parking_ma.Get Lat Long', 'Default GET');
+        r.setStringParameterNoEscape('country', gr.requested_for.country);
+        r.setStringParameterNoEscape('addr', gr.requested_for.city);
+        r.setStringParameterNoEscape('count', '1');
+        r.setStringParameterNoEscape('lang', 'en');
+
+        //override authentication profile 
+        //authentication type ='basic'/ 'oauth2'
+        //r.setAuthenticationProfile(authentication type, profile name);
+
+        //set a MID server name if one wants to run the message on MID
+        //r.setMIDServer('MY_MID_SERVER');
+
+        //if the message is configured to communicate through ECC queue, either
+        //by setting a MID server or calling executeAsync, one needs to set skip_sensor
+        //to true. Otherwise, one may get an intermittent error that the response body is null
+        //r.setEccParameter('skip_sensor', true);
+
+        var response = r.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+    } catch (ex) {
+        var message = ex.message;
+    }
+
+    //  Add copied REST Message script ABOVE this line
+
+
+    // Extract latitude and longitude values from REST Message response
+    var xmlDoc = new XMLDocument2();
+    xmlDoc.parseXML(responseBody);
+    var myLat = xmlDoc.getNodeText("//latitude");
+    var myLong = xmlDoc.getNodeText("//longitude");
+
+    // Plot each Requested for's location on a google map
+    var item = map.addItem(gr);
+    item.latitude = String(myLat);
+    item.longitude = String(myLong);
+    item.dialog_title = gr.getDisplayValue();
+    item.icon = "https://maps.google.com/mapfiles/ms/micons/yellow.png";
+    item.icon_width = "32";
+    item.icon_height = "32";
+}
+
+gr = new GlideRecord('x_cdltd_parking_ma_admin_parking_management');
+// gr.addEncodedQuery("addressISNOTEMPTY");
+// gr.addEncodedQuery("active=true^addressISNOTEMPTY");
+gr.query();
+
+while (gr.next()) {
+
+    //  Add copied  REST Message Script BELOW this line
+
+    try {
+        r = new sn_ws.RESTMessageV2('x_cdltd_parking_ma.Get Lat Long', 'Default GET');
+        r.setStringParameterNoEscape('country', gr.country);
+        r.setStringParameterNoEscape('addr', gr.address);
+        r.setStringParameterNoEscape('count', '1');
+        r.setStringParameterNoEscape('lang', 'en');
+
+        //override authentication profile 
+        //authentication type ='basic'/ 'oauth2'
+        //r.setAuthenticationProfile(authentication type, profile name);
+
+        //set a MID server name if one wants to run the message on MID
+        //r.setMIDServer('MY_MID_SERVER');
+
+        //if the message is configured to communicate through ECC queue, either
+        //by setting a MID server or calling executeAsync, one needs to set skip_sensor
+        //to true. Otherwise, one may get an intermittent error that the response body is null
+        //r.setEccParameter('skip_sensor', true);
+
+        response = r.execute();
+        responseBody = response.getBody();
+        httpStatus = response.getStatusCode();
+    } catch (ex) {
+        message = ex.message;
+    }
+
+    //  Add copied REST Message script ABOVE this line
+
+
+    // Extract latitude and longitude values from REST Message response
+    xmlDoc = new XMLDocument2();
+    xmlDoc.parseXML(responseBody);
+    myLat = xmlDoc.getNodeText("//latitude");
+    myLong = xmlDoc.getNodeText("//longitude");
+
+    // Plot each Requested for's location on a google map
+    item = map.addItem(gr);
+    item.latitude = String(myLat);
+    item.longitude = String(myLong);
+    item.dialog_title = gr.getDisplayValue();
+    item.icon = "https://maps.google.com/mapfiles/ms/micons/red.png";
+    item.icon_width = "32";
+    item.icon_height = "32";
+}]]></script>
+        <show_device_location>true</show_device_location>
+        <suffix>ShowLocations</suffix>
+        <sys_class_name>cmn_map_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 09:52:07</sys_created_on>
+        <sys_id>12ba7073edfc10107f4436720f991aee</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>x_cdltd_parking_ma_ShowLocations</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_update_name>cmn_map_page_12ba7073edfc10107f4436720f991aee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 18:37:14</sys_updated_on>
+        <type>terrain</type>
+        <type_selection>buttons</type_selection>
+        <use_advanced_configuration>false</use_advanced_configuration>
+    </cmn_map_page>
+</record_update>

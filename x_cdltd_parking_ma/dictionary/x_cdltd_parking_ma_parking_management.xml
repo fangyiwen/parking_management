@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Parking Management" max_length="40" name="x_cdltd_parking_ma_parking_management" sizeclass="2" type="collection">
+        <element choice="1" label="Availability" mandatory="true" max_length="40" name="availability" type="integer">
+            <choice/>
+        </element>
+        <element default="1000" label="Capacity" max_length="40" name="capacity" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" mandatory="true" max_length="40" name="email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="End Time" mandatory="true" max_length="40" name="end_time" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Garage" max_length="40" name="garage" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Garage 1" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Garage 2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Garage 3" sequence="2" value="3"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Name" mandatory="true" max_length="40" name="name" reference="sys_user" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Plate number" mandatory="true" max_length="40" name="plate_number" type="string"/>
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element default="-1" label="Spot number" max_length="40" name="spot_number" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Start Time" mandatory="true" max_length="40" name="start_time" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Time In" mandatory="true" max_length="40" name="time_in" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Time Out" mandatory="true" max_length="40" name="time_out" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="New Calendar Date/Time" max_length="40" name="u_calendar_date_time_9" type="calendar_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="New Date/Time" max_length="40" name="u_glide_date_time_12" type="glide_date_time"/>
+        <element label="New Time" max_length="40" name="u_glide_time_10" type="glide_time"/>
+        <element label="New UTC Time" max_length="40" name="u_glide_utc_time_11" type="glide_utc_time"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:getNext()ObjNumberPadded();" label="New String" max_length="40" name="u_string_3" type="string"/>
+    </element>
+</database>

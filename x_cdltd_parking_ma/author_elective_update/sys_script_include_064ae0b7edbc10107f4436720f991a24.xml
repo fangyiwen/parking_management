@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cdltd_parking_ma.Util</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Util</name>
+        <script><![CDATA[var Util = Class.create();
+Util.prototype = {
+    initialize: function() {
+    },
+	foo : function() {
+//var flags=[].repeat(0,100);
+
+var request = new GlideRecord('x_cdltd_parking_ma_parking_management');
+request.addQuery('spot_number',-1);
+request.query();
+
+while(request.next()){
+	
+	//var flags=[].repeat(0,100);
+	var processed = new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+	processed.query();
+	
+	while(processed.next()){
+		/*var processed_start_time=new GlideDateTime(processed.start_time);
+		var request_start_time=new GlideDateTime(request.start_time);
+		if(processed_start_time.getDate()!=request_start_time.getDate()){
+			continue;
+		}
+		var index=processed.spot_number-1;
+		if(processed.start_time.getTime()>request.end_time.getTime()||
+						processed.end_time.getTime()>request.start_time.getTime()){
+			if(flags[index]!=-1)
+				flags[index]=1;
+		}else{
+			flags[index]=-1;
+		}*/
+	}
+	
+	
+	var first_one_index = flags.indexOf(1);
+	var first_zero_index = flags.indexOf(0);
+	
+	if(first_one_index==-1){
+		request.spot_number=first_zero_index+1;
+	}else{
+		request.spot_number=first_one_index+1;
+	}
+	
+	//if(request.spot_number>0){
+		var newRecord=new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+		newRecord.initialize();
+		newRecord.number=request.number;
+		newRecord.plate_number=request.plate_number;
+		newRecord.requested_for=request.requested_for;
+		newRecord.spot_number=request.spot_number;
+		newRecord.start_time=request.start_time;
+		newRecord.end_time=request.end_time;
+		if(newRecord.insert()){
+			request.deleteRecord();
+		}
+	//}
+	//flags=[].repeat(0,100);
+}
+  },
+    type: 'Util'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 08:40:45</sys_created_on>
+        <sys_id>064ae0b7edbc10107f4436720f991a24</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Util</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_update_name>sys_script_include_064ae0b7edbc10107f4436720f991a24</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 08:42:36</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</application>
+        <file_path/>
+        <instance_id>854d1557dbf89c5480d9a18c139619fe</instance_id>
+        <instance_name>ne-hackathon-dev-005</instance_name>
+        <name>sys_script_include_064ae0b7edbc10107f4436720f991a24</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_cdltd_parking_ma.Util&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;Util&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var Util = Class.create();
+Util.prototype = {
+    initialize: function() {
+    },
+	foo : function() {
+//var flags=[].repeat(0,100);
+
+var request = new GlideRecord('x_cdltd_parking_ma_parking_management');
+request.addQuery('spot_number',-1);
+request.query();
+
+while(request.next()){
+	
+	//var flags=[].repeat(0,100);
+	var processed = new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+	processed.query();
+	
+	while(processed.next()){
+		/*var processed_start_time=new GlideDateTime(processed.start_time);
+		var request_start_time=new GlideDateTime(request.start_time);
+		if(processed_start_time.getDate()!=request_start_time.getDate()){
+			continue;
+		}
+		var index=processed.spot_number-1;
+		if(processed.start_time.getTime()&gt;request.end_time.getTime()||
+						processed.end_time.getTime()&gt;request.start_time.getTime()){
+			if(flags[index]!=-1)
+				flags[index]=1;
+		}else{
+			flags[index]=-1;
+		}*/
+	}
+	
+	
+	var first_one_index = flags.indexOf(1);
+	var first_zero_index = flags.indexOf(0);
+	
+	if(first_one_index==-1){
+		request.spot_number=first_zero_index+1;
+	}else{
+		request.spot_number=first_one_index+1;
+	}
+	
+	//if(request.spot_number&gt;0){
+		var newRecord=new GlideRecord('x_cdltd_parking_ma_processed_parking_management');
+		newRecord.initialize();
+		newRecord.number=request.number;
+		newRecord.plate_number=request.plate_number;
+		newRecord.requested_for=request.requested_for;
+		newRecord.spot_number=request.spot_number;
+		newRecord.start_time=request.start_time;
+		newRecord.end_time=request.end_time;
+		if(newRecord.insert()){
+			request.deleteRecord();
+		}
+	//}
+	//flags=[].repeat(0,100);
+}
+  },
+    type: 'Util'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-05-22 08:40:45&lt;/sys_created_on&gt;&lt;sys_id&gt;064ae0b7edbc10107f4436720f991a24&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Util&lt;/sys_name&gt;&lt;sys_package display_value="Parking Management" source="x_cdltd_parking_ma"&gt;6e288e6fed3810107f4436720f991a8c&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Parking Management"&gt;6e288e6fed3810107f4436720f991a8c&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_064ae0b7edbc10107f4436720f991a24&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-05-22 08:42:36&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>406353613</payload_hash>
+        <record_name>Util</record_name>
+        <reverted_from/>
+        <source>22288e6fed3810107f4436720f991a8f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 08:42:36</sys_created_on>
+        <sys_id>403be8b7edbc10107f4436720f991a75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1723b8c65dd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 08:42:36</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>c83be8b7a4bc10106d5121e221c3b074</update_guid>
+        <update_guid_history>c83be8b7a4bc10106d5121e221c3b074:406353613,6f0be8b7f3bc10100939f58d73189646:-30614547,49cae4b716bc101088e23e0594c3f388:2025616077</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 15:05:52</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>50f5915581094becaa480cb22daf1d99</sys_id>
+        <sys_metadata>064ae0b7edbc10107f4436720f991a24</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Util</sys_name>
+        <sys_package display_value="Parking Management" source="x_cdltd_parking_ma">6e288e6fed3810107f4436720f991a8c</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Parking Management">6e288e6fed3810107f4436720f991a8c</sys_scope>
+        <sys_scope_delete display_value="">5398b008da444608a3f25d25501ac9c4</sys_scope_delete>
+        <sys_update_name>sys_script_include_064ae0b7edbc10107f4436720f991a24</sys_update_name>
+        <sys_update_version display_value="sys_script_include_064ae0b7edbc10107f4436720f991a24">403be8b7edbc10107f4436720f991a75</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-22 15:05:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
